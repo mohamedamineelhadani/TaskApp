@@ -1,11 +1,11 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import authApi from "../services/authApi" ;
+import authApi from "../service/authApi";
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user,    setUser]    = useState(JSON.parse(localStorage.getItem("user")) ?? null);
-  const [token,   setToken]   = useState(localStorage.getItem("token") ?? null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) ?? null);
+  const [token, setToken] = useState(localStorage.getItem("token") ?? null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,7 +13,8 @@ export const AuthProvider = ({ children }) => {
       if (!token) return setLoading(false);
       try {
         const { data } = await authApi.me();
-        setUser(data.data);
+        setUser(data);
+        localStorage.setItem("user", JSON.stringify(data));
       } catch {
         logout();
       } finally {
@@ -25,11 +26,19 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     const { data } = await authApi.login({ email, password });
-    const { user, access_token } = data.data;
-    setToken(access_token);
-    setUser(user);
-    localStorage.setItem("token", access_token);
-    localStorage.setItem("user",  JSON.stringify(user));
+    setToken(data.token);
+    setUser(data.user);
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+  };
+
+  const register = async (name, email, password, password_confirmation) => {
+    const { data } = await authApi.register({ name, email, password, password_confirmation });
+    setToken(data.token);
+    setUser(data.user);
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+    return data;
   };
 
   const logout = async () => {
@@ -46,6 +55,7 @@ export const AuthProvider = ({ children }) => {
       token,
       loading,
       login,
+      register,
       logout,
       isAuthenticated: !!token,
     }}>
@@ -55,4 +65,3 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => useContext(AuthContext);
-

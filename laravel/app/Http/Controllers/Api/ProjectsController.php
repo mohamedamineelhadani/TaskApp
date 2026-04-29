@@ -7,7 +7,7 @@ use App\Models\Projects;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProjectController extends Controller
+class ProjectsController extends Controller
 {
 
     public function index(Request $request)

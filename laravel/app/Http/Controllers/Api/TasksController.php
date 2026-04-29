@@ -8,7 +8,7 @@ use App\Models\Tasks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class TaskController extends Controller
+class TasksController extends Controller
 {
     public function store(Request $request, Projects $project)
     {

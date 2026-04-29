@@ -2,7 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\{
+    AuthController,
+    ProfileController,
+    ProjectsController,
+    TasksController,
+    ContactsController,
+    DashboardController,
+};
 
 
 /*
@@ -48,15 +55,15 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
-    Route::patch('projects/{project}/status', [ProjectController::class, 'updateStatus'])
-        ->name('projects.updateStatus');
-    Route::apiResource('projects', ProjectController::class);
+    Route::patch('projects/{project}/status', [ProjectsController::class, 'updateStatus'])
+        ->name('projects.updateStatus');  
+    Route::apiResource('projects', ProjectsController::class);
 
 
-    Route::post('/projects/{project}/tasks', [TaskController::class, 'store'])->name('tasks.store');
-    Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggleStatus'])->name('tasks.toggle');
-    Route::post('/projects/{project}/complete-all', [TaskController::class, 'completeAll'])->name('tasks.completeAll');
-    Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+    Route::post('/projects/{project}/tasks', [TasksController::class, 'store'])->name('tasks.store');
+    Route::patch('/tasks/{task}/toggle', [TasksController::class, 'toggleStatus'])->name('tasks.toggle');
+    Route::post('/projects/{project}/complete-all', [TasksController::class, 'completeAll'])->name('tasks.completeAll');
+    Route::delete('/tasks/{task}', [TasksController::class, 'destroy'])->name('tasks.destroy');
 
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -64,7 +71,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+    Route::post('/contact', [ContactsController::class, 'store'])->name('contact.store');
 
 
 

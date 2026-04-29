@@ -163,7 +163,7 @@
                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
                 <polyline points="9 14 11 16 15 12"/>
             </svg>
-            Task Management
+            TaskApp
         </a>
 
         <!-- Nav Links -->
