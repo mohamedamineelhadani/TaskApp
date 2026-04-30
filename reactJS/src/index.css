@@ -38,9 +38,9 @@ input, textarea, select { font-family: inherit; }
 .sidebar-nav a, .sidebar-nav button { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: var(--border-radius); color: var(--text-muted); font-size: .9rem; font-weight: 500; transition: var(--transition); width: 100%; border: none; background: none; text-align: left; }
 .sidebar-nav a:hover, .sidebar-nav button:hover { background: rgba(255,255,255,.06); color: #fff; }
 .sidebar-nav a.active { background: rgba(99,102,241,.15); color: var(--primary); }
-.sidebar-user { padding: 16px 20px; border-top: 1px solid var(--navbar-border); }
-.sidebar-user-info { display: flex; align-items: center; gap: 12px; }
-.sidebar-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #a78bfa); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: .85rem; }
+.sidebar-user { padding: 10px 5px; border-top: 1px solid var(--navbar-border); }
+.sidebar-user-info { display: flex; align-items: center; gap: 5px; }
+.sidebar-avatar { min-width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #a78bfa); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: .85rem; }
 .sidebar-user-name { font-size: .85rem; font-weight: 600; color: #fff; }
 .sidebar-user-email { font-size: .75rem; color: var(--text-muted); }
 .sidebar-close { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
