@@ -1,4 +1,4 @@
-# 📋 TaskApp
+# TaskApp
 
 A full-stack Task Management Application built with **Laravel 10** (Blade + API) and **React 19** (Vite).
 
@@ -9,7 +9,7 @@ A full-stack Task Management Application built with **Laravel 10** (Blade + API)
 
 ---
 
-## 📖 Project Overview
+## Project Overview
 
 TaskApp is a project management web application built as **two independent implementations**:
 
@@ -22,20 +22,20 @@ Both versions share the **same database**, **models**, **migrations**, and **bus
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🔐 **Authentication** — Register, Login, Logout, Email Verification, Forgot/Reset Password
-- 📁 **Project Management** — Create, Read, Update, Delete projects
-- ✅ **Task Tracking** — Add tasks to projects, toggle completion, complete all
-- 📊 **Dashboard Analytics** — Stats cards, completion rates, recent projects
-- 👤 **Profile Management** — Update name, email, password, delete account
-- 📧 **Contact Form** — Send messages with subject and body
-- 🛡️ **Secure API** — Sanctum token-based authentication for React SPA
-- 📱 **Responsive Design** — Works on desktop and mobile
+-  **Authentication** — Register, Login, Logout, Email Verification, Forgot/Reset Password
+-  **Project Management** — Create, Read, Update, Delete projects
+-  **Task Tracking** — Add tasks to projects, toggle completion, complete all
+-  **Dashboard Analytics** — Stats cards, completion rates, recent projects
+-  **Profile Management** — Update name, email, password, delete account
+-  **Contact Form** — Send messages with subject and body
+-  **Secure API** — Sanctum token-based authentication for React SPA
+-  **Responsive Design** — Works on desktop and mobile
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 | Table | Fields |
 |-------|--------|
@@ -52,7 +52,7 @@ Both versions share the **same database**, **models**, **migrations**, and **bus
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -65,7 +65,7 @@ Both versions share the **same database**, **models**, **migrations**, and **bus
 
 ---
 
-## 📡 API Endpoints (V2)
+##  API Endpoints (V2)
 
 ### Public Routes (No Auth)
 
@@ -105,7 +105,7 @@ Both versions share the **same database**, **models**, **migrations**, and **bus
 
 ---
 
-## 📄 Pages
+##  Pages
 
 ### V1 (Laravel Blade)
 - Welcome (Landing page)
@@ -130,7 +130,7 @@ Both versions share the **same database**, **models**, **migrations**, and **bus
 
 ---
 
-## 🛠️ Installation
+##  Installation
 
 ### Prerequisites
 - PHP 8.1+
